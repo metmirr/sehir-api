@@ -8,3 +8,5 @@ migrations
 dev-data.sqlite
 test-data.sqlite
 
+# Python
+__pycache__
