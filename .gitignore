@@ -1,2 +1,10 @@
-# virtualenv 
+# Virtualenv 
 venv
+
+# Migrations klasörü
+migrations
+
+# Veri tabanı dosyaları
+dev-data.sqlite
+test-data.sqlite
+
