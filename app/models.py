@@ -1,6 +1,7 @@
 from datetime import datetime
 from . import db
 from flask import url_for
+from .citiesdict import cities
 
 class City(db.Model):
     __tablename__ = 'cities'
@@ -23,3 +24,11 @@ class City(db.Model):
                 'google map link': 'https://www.google.com/maps/place/{}'.format(self.name),
         }
         return json_city
+    @staticmethod
+    def insert_cities():
+        for c in cities:
+            city = City.query.filter_by(name=c['name']).first()
+            if city is None:
+                city = City(name=c['name'], city_code=c['city_code'])
+            db.session.add(city)
+            db.session.commit()
