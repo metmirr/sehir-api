@@ -1,4 +1,4 @@
-from flask import jsonify, request, url_for
+from flask import jsonify, request, url_for, abort
 from .. import db
 from ..models import City
 
@@ -11,6 +11,14 @@ def get_cities():
     return jsonify([city.to_json() for city in cities])
 
 @api.route('/city/<int:id>')
-def get_city(id):
-    city = City.query.get_or_404(id)
-    return jsonify(city.to_json())
+@api.route('/city/<name>')
+def get_city(id=None, name=None):
+	if id is not None:
+		city = City.query.get_or_404(id)
+	if name is not None:
+		name = name.capitalize()
+		city = City.query.filter_by(name=name).first()
+		if city is None:
+			abort(404)
+	return jsonify(city.to_json())
+
