@@ -4,7 +4,8 @@
 	  
 	  Türkiyedeki şehirlerin genel bilgilerini barındıran restful web servisidir.
 
-~ Projenin çalışan hali:
+
+	~ Projenin çalışan hali:
 	
 	api-sehir.herokuapp.com
  
