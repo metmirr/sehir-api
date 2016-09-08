@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 
 from flask import Flask
 from flask_moment import Moment
@@ -13,7 +14,7 @@ moment = Moment()
 def create_app(config_name):
     '''
     Uygulama yapılandırıcısı, uygulama için gerekli eklentiler ekleniyor,
-    hangi Congif sınıfı kullanılıyorsa ona göre uygulama oluşturuşuyor.
+    hangi Config sınıfı kullanılıyorsa ona göre uygulama oluşturuşuyor.
     '''
     app = Flask(__name__)
     app.config.from_object(config[config_name])
