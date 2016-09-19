@@ -1,3 +1,7 @@
+#-*- coding: utf-8 -*-
+'''
+    Şehirlerin listesini tutan sözlük
+'''
 cities = [
 		{
             'name': 'Adana',

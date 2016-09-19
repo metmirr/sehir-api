@@ -7,6 +7,10 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
+    '''
+    Temel config sınıfı, uygulama ile ilgili temel konfügürasyonlar bu sınıfta
+    belirlenir diğer sınıflar ise bundan türeatilir.
+    '''
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'gizli string buraya yazılacak'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
@@ -21,7 +25,6 @@ class DevConfig(Config):
     '''
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'dev-data.sqlite')
-
 
 class TestConfig(Config):
     '''
