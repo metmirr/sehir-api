@@ -19,7 +19,7 @@ class City(db.Model):
                 'Sehir-Bilgileri': {
                     'plaka': self.city_code,
                     'sehir': self.name,
-                }
+                },
                 'Eklendi': self.timestamp,
                 'Google Map Link': 'https://www.google.com/maps/place/{}'.format(self.name),
         }
