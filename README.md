@@ -6,5 +6,5 @@
 
 ## Projenin çalışan hali:
 	
-[Api Sehir](api-sehir.herokuapp.com)
+[Api Sehir](http://api-sehir.herokuapp.com)
  
