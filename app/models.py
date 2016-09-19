@@ -15,11 +15,13 @@ class City(db.Model):
 
     def to_json(self):
         json_city = {
-                'url': url_for('api.get_city', id=self.id, _external=True),
-                'plaka': self.city_code,
-                'sehir': self.name,
-                'eklendi': self.timestamp,
-                'google map link': 'https://www.google.com/maps/place/{}'.format(self.name),
+                'URL': url_for('api.get_city', id=self.id, _external=True),
+                'Sehir-Bilgileri': {
+                    'plaka': self.city_code,
+                    'sehir': self.name,
+                }
+                'Eklendi': self.timestamp,
+                'Google Map Link': 'https://www.google.com/maps/place/{}'.format(self.name),
         }
         return json_city
     @staticmethod
