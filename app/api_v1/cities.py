@@ -14,6 +14,7 @@ def get_cities():
 	cities = City.query.all()
 	return jsonify([city.to_json() for city in cities])
 
+
 @api.route('/city/<int:id>')
 @api.route('/city/<name>')
 def get_city(id=None, name=None):
@@ -30,3 +31,11 @@ def get_city(id=None, name=None):
 			abort(404)
 	return jsonify(city.to_json())
 
+
+@api.route('/city/')
+def getcity_withquerysting():
+	id = request.args.get('id')
+	if id is not None:
+		city = City.query.get_or_404(id)
+		return jsonify(city.to_json())
+	return abort(404)
